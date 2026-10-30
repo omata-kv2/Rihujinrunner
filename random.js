@@ -1,8 +1,8 @@
 // 隠しルールと独立ランダム即死の抽選。
 const HIDDEN_RULE_POOL = [
-  { id: "run_too_long", label: "連続走行", threshold: 7.5 },
-  { id: "jump_too_much", label: "ジャンプ回数", threshold: 9 },
-  { id: "stand_too_long", label: "静止時間", threshold: 5.5 },
+  { id: "run_too_long", label: "連続走行", threshold: 8 },
+  { id: "jump_too_much", label: "ジャンプ回数", threshold: 10 },
+  { id: "stand_too_long", label: "静止時間", threshold: 6 },
   { id: "turn_too_much", label: "方向転換", threshold: 13 },
   { id: "time_limit", label: "滞在時間", threshold: 58 },
   { id: "fall_too_far", label: "落下距離", threshold: 205 },
