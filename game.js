@@ -13,7 +13,10 @@
   const deathCountLabel = document.getElementById("death-count-label");
 
   const keys = new Set();
-  let stageIndex = 0, deaths = 0, running = false, lastTime = 0;
+  let stageIndex = 0;
+  let deaths = Number(localStorage.getItem("unfairAdventureDeaths") || 0);
+  if (!Number.isFinite(deaths) || deaths < 0) deaths = 0;
+  let running = false, lastTime = 0;
   let stage, player, cameraX, hiddenRules, stats, coins, deathReason;
 
   function resetStage() {
@@ -52,6 +55,7 @@
     if (!running) return;
     running = false;
     deaths++;
+    localStorage.setItem("unfairAdventureDeaths", String(deaths));
     deathCountLabel.textContent = `DEATHS: ${deaths}`;
     const random = type === "random";
     const message = random
@@ -241,6 +245,12 @@
   }
 
   document.getElementById("start-button").addEventListener("click", startGame);
+  document.getElementById("reset-record-button").addEventListener("click", () => {
+    if (!window.confirm("累計死亡回数を0にリセットします。よろしいですか？")) return;
+    deaths = 0;
+    localStorage.removeItem("unfairAdventureDeaths");
+    deathCountLabel.textContent = "DEATHS: 0";
+  });
   document.getElementById("retry-button").addEventListener("click", startGame);
   document.getElementById("quit-button").addEventListener("click", showHome);
   document.getElementById("home-button").addEventListener("click", showHome);
@@ -255,6 +265,9 @@
   });
   window.addEventListener("keyup", e => keys.delete(e.code));
   window.addEventListener("blur", () => keys.clear());
+  document.addEventListener("contextmenu", e => e.preventDefault());
+  document.addEventListener("selectstart", e => e.preventDefault());
+  document.addEventListener("dragstart", e => e.preventDefault());
 
   document.querySelectorAll("#touch-controls button").forEach(button => {
     const key = button.dataset.key;
