@@ -25,5 +25,6 @@ const RULE_DEATH_MESSAGES = {
 const NORMAL_DEATH_MESSAGES = {
   pit: "この穴ッッ！！深いッッ！！",
   hazard: "針如きで死ぬなど、気合いが足らぬ！",
+  enemy: "馬鹿キメェこいつ…",
   unknown: "ちょっと俺もわかんないかも(by制作者俺)"
 };
