@@ -20,12 +20,12 @@ const RULE_DEATH_MESSAGES = {
   time_limit: "「時間厳守」…社会人の基本だよね。",
   fall_too_far: "飛び降り自◯は50歳になってからね()",
   coin_greed: "わかるよ？コインは集めたいもんね？人間だもの。",
-  powerup_too_much: "禁断のパワーアップに手を出しちまった！！"
+  powerup_too_much: "ポリ公に見つかっちまった！！"
 };
 
 const NORMAL_DEATH_MESSAGES = {
   pit: "この穴ッッ！！深いッッ！！",
-  hazard: "針如きで死ぬなど、気合いが足らぬ！",
+  hazard: "避けろ‼︎",
   enemy: "馬鹿キメェこいつ…",
   unknown: "ちょっと俺もわかんないかも(by制作者俺)"
 };
