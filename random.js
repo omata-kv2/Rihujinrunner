@@ -6,7 +6,7 @@ const HIDDEN_RULE_POOL = [
   { id: "turn_too_much", label: "方向転換", threshold: 13 },
   { id: "time_limit", label: "滞在時間", threshold: 58 },
   { id: "fall_too_far", label: "落下距離", threshold: 205 },
-  { id: "coin_greed", label: "コイン取得", threshold: 5 },
+  { id: "coin_greed", label: "コイン取得", threshold: 7 },
   { id: "powerup_too_much", label: "謎の巨大化アイテム取得", threshold: 1 }
 ];
 
@@ -22,5 +22,5 @@ function chooseHiddenRules() {
 
 function rollIndependentDeath(deltaSeconds) {
   // 1秒あたり約0.8%。隠しルールとは独立した抽選。
-  return Math.random() < 1 - Math.pow(1 - 0.008, deltaSeconds);
+  return Math.random() < 1 - Math.pow(1 - 0.01, deltaSeconds);
 }
