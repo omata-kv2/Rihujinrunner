@@ -14,17 +14,17 @@ const RANDOM_DEATH_MESSAGES = [
 
 const RULE_DEATH_MESSAGES = {
   run_too_long: "クーデターだ！足の筋肉たちを休ませろ！！",
-  jump_too_much: "ジャンプによって横揺れの記憶が呼び起こされた。",
+  jump_too_much: "ジャンプで横揺れの記憶が呼び起こされた。",
   stand_too_long: "「動け！デカ物！されば其方は美しい」",
   turn_too_much: "方向転換しすぎ、キョロちゃんか？",
   time_limit: "「時間厳守」…社会人の基本だよね。",
   fall_too_far: "飛び降り自◯は50歳になってからね()",
-  coin_greed: "わかるよ？コインは集めたいもんね？人間だもの。"
+  coin_greed: "わかるよ？人間は欲望の生物だからね？"
 };
 
 const NORMAL_DEATH_MESSAGES = {
   pit: "この穴ッッ！！深いッッ！！",
-  hazard: "針如きで死ぬなど、気合いが足らぬ！",
+  hazard: "何で当たったの？",
   enemy: "馬鹿キメェこいつ…",
   unknown: "ちょっと俺もわかんないかも(by制作者俺)"
 };
