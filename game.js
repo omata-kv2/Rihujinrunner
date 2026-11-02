@@ -366,8 +366,8 @@
           ctx.save();
           ctx.imageSmoothingEnabled = false;
           // 元画像の比率（3:2）を維持。ボックスから左右にはみ出して表示する。
-          const leafW = 36;
-          const leafH = 24;
+          const leafW = 54;
+          const leafH = 36;
           ctx.drawImage(
             powerupImage,
             item.x + item.w / 2 - leafW / 2,
