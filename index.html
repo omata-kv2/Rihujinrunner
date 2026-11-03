@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+  <title>UNFAIR ADVENTURE</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main id="game-shell">
+    <canvas id="game" width="960" height="540" aria-label="UNFAIR ADVENTURE game"></canvas>
+
+    <section id="home-screen" class="screen">
+      <div class="panel home-panel">
+        <p class="eyebrow">A VERY UNFAIR PLATFORMER</p>
+        <h1>UNFAIR<br><span>ADVENTURE</span></h1>
+        <p>ゴールを目指せ。ルールは誰も教えてくれない。</p>
+        <p class="help">ステージの地形・背景・名称は毎回ランダム生成。リトライでは同じ地形を再現。</p>
+        <button id="start-button" class="primary">冒険を始める</button>
+        <button id="reset-record-button" class="secondary reset-record">記録をリセット</button>
+        <p class="help">移動：← → / A D　ジャンプ：Space / W / ↑</p>
+      </div>
+    </section>
+
+    <section id="death-screen" class="screen hidden">
+      <div class="death-panel">
+        <p class="eyebrow">THE WORLD HAS REJECTED YOU</p>
+        <h2>YOU DIED</h2>
+        <p id="death-message" class="death-message"></p>
+        <div class="death-log" id="death-log"></div>
+        <div class="death-actions">
+          <button id="retry-button" class="primary">もう一度同じステージ遊ぶ</button>
+          <button id="quit-button" class="secondary">いさぎよくくたばる</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="win-screen" class="screen hidden">
+      <div class="panel">
+        <p class="eyebrow">IMPOSSIBLE? NOT THIS TIME.</p>
+        <h2>STAGE CLEAR!</h2>
+        <p id="clear-message">生き残ってしまった。</p>
+        <button id="next-button" class="primary">次のステージへ</button>
+        <button id="home-button" class="secondary">ホームへ戻る</button>
+      </div>
+    </section>
+
+    <div id="hud">
+      <span id="stage-label">STAGE 01</span>
+      <span id="progress-label">0%</span>
+      <span id="death-count-label">DEATHS: 0</span>
+    </div>
+
+    <div id="touch-controls" aria-label="タッチ操作">
+      <div class="touch-left">
+        <button data-key="ArrowLeft" aria-label="左">◀</button>
+        <button data-key="ArrowRight" aria-label="右">▶</button>
+      </div>
+      <button data-key="Space" class="jump-button" aria-label="ジャンプ">JUMP</button>
+    </div>
+  </main>
+  <script src="stages.js"></script>
+  <script src="deaths.js"></script>
+  <script src="random.js"></script>
+  <script src="game.js"></script>
+</body>
+</html>
